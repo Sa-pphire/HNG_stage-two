@@ -4,9 +4,7 @@ require("dotenv").config()
 
 //database
 const db = require("./app/models");
-db.sequelize.sync({force: true}).then(() => {
-  console.log('Drop and Resync Db');
-});
+db.sequelize.sync();
 
 // parse requests of content-type - application/json
 app.use(express.json());
