@@ -48,10 +48,10 @@ Import "REST API basics- CRUD, test & variable.postman_collection.json" test scr
 ![user_crud_create](./app/utils/create.png)
 
 After creating new user, you can check PostgreSQL table:
-```testdb=# select * from users;
+```stage_two_puq5=# select * from users;
     username      |       name      |    gender     |         createdAt          |         updatedAt
 ------------------+-----------------+---------------+----------------------------+----------------------------
- sapphire         | Chidinma Akunwa | Female        | 2023-09-13 12:03:57.121+07 | 2023-09-13 12:03:57.121+07
+ sapphire         | Chidinma Judith | Female        | 2023-09-13 12:03:57.121+07 | 2023-09-13 12:03:57.121+07
 ```
 
 - Retrieve a user by id using `GET https://stage-two-w8w5.onrender.com/api/:user_id` Api
@@ -63,7 +63,7 @@ After creating new user, you can check PostgreSQL table:
 ![user_crud_update](./app/utils/update.png)
 
 Check `users` table after some rows were updated:
-```testdb=# select * from users;
+```stage_two_puq5=# select * from users;
     username      |       name      |    gender     |         createdAt          |         updatedAt
 ------------------+-----------------+---------------+----------------------------+----------------------------
  sapphire         | Chidinma Akunwa | Female        | 2023-09-13 12:03:57.121+07 | 2023-09-13 12:03:57.121+07
@@ -75,7 +75,7 @@ Check `users` table after some rows were updated:
 
 user with id = sapphire was removed from `users` table:
 
-```testdb=# select * from users;
+```stage_two_puq5=# select * from users;
  username | name | gender | createdAt | updatedAt
 ----------+------+--------+-----------+----------
           |      |        |           | 
