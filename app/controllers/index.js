@@ -42,9 +42,15 @@ exports.create = (req, res) => {
 
         // Save user in the database
         User.create(user)
-        return res.status(201).json({
-            user,
-        });
+        .then(data => {
+            return data;
+          })
+          .catch(err => {
+            res.status(500).send({
+              message:
+                err.message || "Some error occurred while creating the user."
+            });
+          });
     } catch (error){
         return res.status(500).json({
           error: "Error creating user"
