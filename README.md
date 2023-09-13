@@ -1,5 +1,5 @@
 # HNGx_stage-two
-## Live Endpoint at https://hng-internship-lstf.onrender.com/api
+## Live Endpoint at https://stage-two-w8w5.onrender.com/api
 
 ### Task:
 Develop a REST API with Basic CRUD Operation
@@ -41,7 +41,7 @@ The following table shows overview of the Rest APIs that will be exported:
 - DELETE  `api/:user_id`         remove user by id
 
 Import test script into Postman and run tests
-- Create a new user using `POST https://hng-internship-lstf.onrender.com/api/` Api
+- Create a new user using `POST https://stage-two-w8w5.onrender.com/api/` Api
 
 ![user_crud_create](./app/utils/create.png)
 
@@ -52,11 +52,11 @@ After creating new user, you can check PostgreSQL table:
  sapphire         | Chidinma Akunwa | Female        | 2020-01-29 10:42:57.121+07 | 2020-01-29 10:42:57.121+07
 ```
 
-- Retrieve a user by id using `GET https://hng-internship-lstf.onrender.com/api/:user_id` Api
+- Retrieve a user by id using `GET https://stage-two-w8w5.onrender.com/api/:user_id` Api
 
 ![user_crud_retrieve](./app/utils/get.png)
 
-- Update a user using `PUT https://hng-internship-lstf.onrender.com/api/:user_id` Api
+- Update a user using `PUT https://stage-two-w8w5.onrender.com/api/:user_id` Api
 
 ![user_crud_update](./app/utils/update.png)
 
@@ -67,7 +67,7 @@ Check `users` table after some rows were updated:
  sapphire         | Chidinma Akunwa | Female        | 2020-01-29 10:42:57.121+07 | 2020-01-29 10:42:57.121+07
 ```
 
-- Delete a user using `DELETE https://hng-internship-lstf.onrender.com/api/:user_id` Api
+- Delete a user using `DELETE https://stage-two-w8w5.onrender.com/api/:user_id` Api
 
 ![user_crud_delete](./app/utils/delete.png)
 
