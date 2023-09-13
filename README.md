@@ -40,7 +40,9 @@ The following table shows overview of the Rest APIs that will be exported:
 - PUT     `api/:user_id`         update user by id
 - DELETE  `api/:user_id`         remove user by id
 
-Import test script into Postman and run tests
+Import "REST API basics- CRUD, test & variable.postman_collection.json" test script into Postman and run collection.
+
+### Route tests
 - Create a new user using `POST https://stage-two-w8w5.onrender.com/api/` Api
 
 ![user_crud_create](./app/utils/create.png)
@@ -49,7 +51,7 @@ After creating new user, you can check PostgreSQL table:
 ```testdb=# select * from users;
     username      |       name      |    gender     |         createdAt          |         updatedAt
 ------------------+-----------------+---------------+----------------------------+----------------------------
- sapphire         | Chidinma Akunwa | Female        | 2020-01-29 10:42:57.121+07 | 2020-01-29 10:42:57.121+07
+ sapphire         | Chidinma Akunwa | Female        | 2023-09-13 12:03:57.121+07 | 2023-09-13 12:03:57.121+07
 ```
 
 - Retrieve a user by id using `GET https://stage-two-w8w5.onrender.com/api/:user_id` Api
@@ -64,7 +66,7 @@ Check `users` table after some rows were updated:
 ```testdb=# select * from users;
     username      |       name      |    gender     |         createdAt          |         updatedAt
 ------------------+-----------------+---------------+----------------------------+----------------------------
- sapphire         | Chidinma Akunwa | Female        | 2020-01-29 10:42:57.121+07 | 2020-01-29 10:42:57.121+07
+ sapphire         | Chidinma Akunwa | Female        | 2023-09-13 12:03:57.121+07 | 2023-09-13 12:03:57.121+07
 ```
 
 - Delete a user using `DELETE https://stage-two-w8w5.onrender.com/api/:user_id` Api
