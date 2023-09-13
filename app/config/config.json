@@ -1,0 +1,15 @@
+{ 
+  "development": {
+  "DB": "process.env.DB",
+  "USER": "process.env.USER",
+  "PASSWORD": "process.env.PASSWORD",
+  "HOST": "process.env.HOST",
+  "dialect": "postgres",
+  "dialectOptions":{
+    "ssl":{
+      "require": true,
+      "rejectUnauthorized": false
+    }
+  }
+}
+}
