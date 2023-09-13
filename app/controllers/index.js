@@ -6,20 +6,20 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
     try {
                 // Validate request
-        if ( !req.body.first_name || !req.body.last_name || !req.body.gender) {
+        if ( !req.body.name || !req.body.username || !req.body.gender) {
             res.status(400).send({
                 message: "All fields are required!"
             });
         return;
         }
 
-        else if (typeof(req.body.first_name) != "string") {
+        else if (typeof(req.body.name) != "string") {
         res.status(400).send({
         message: "First name must be a string!"
         });
         return;
         }
-        else if (typeof(req.body.last_name) != "string") {
+        else if (typeof(req.body.username) != "string") {
         res.status(400).send({
         message: "Last name must be a string!"
         });
@@ -35,8 +35,8 @@ exports.create = (req, res) => {
 
         // Create a user
         const user = {
-        first_name: req.body.first_name,
-        last_name: req.body.last_name,
+        name: req.body.name,
+        username: req.body.username,
         gender: req.body.gender
         };
 
@@ -55,13 +55,13 @@ exports.create = (req, res) => {
 // Find a single User with an id
 exports.findOne = (req, res) => {
 
-    const user_id = req.params.user_id + "%";
+    const user_id = req.params.user_id;
 
     User.findOne(
         {
             where: { [Op.or]: [
-                { first_name: { [Op.like]: user_id } },
-                {last_name: { [Op.like]: user_id } },
+                { name: { [Op.like]: user_id } },
+                {username: { [Op.like]: user_id } },
                 {gender: { [Op.like]: user_id } }],
                 
             }   }
@@ -85,7 +85,7 @@ exports.findOne = (req, res) => {
 
 // Update a User by the id in the request
 exports.update = (req, res) => {
-    const user_id = req.params.user_id + "%";
+    const user_id = req.params.user_id;
     if ( !req.body) {
         res.status(400).send({
             message: "Enter a value"
@@ -102,8 +102,8 @@ exports.update = (req, res) => {
 
     User.update(req.body, {
         where: { [Op.or]: [
-            { first_name: { [Op.like]: user_id } },
-            {last_name: { [Op.like]: user_id } },
+            { name: { [Op.like]: user_id } },
+            {username: { [Op.like]: user_id } },
             {gender: { [Op.like]: user_id } }],
             
         }   
@@ -129,12 +129,12 @@ exports.update = (req, res) => {
 // Delete a User with the specified id in the request
 exports.delete = (req, res) => {
 
-    const user_id = req.params.user_id + "%";
+    const user_id = req.params.user_id;
 
     User.destroy({
         where: { [Op.or]: [
-            { first_name: { [Op.like]: user_id } },
-            {last_name: { [Op.like]: user_id } },
+            { name: { [Op.like]: user_id } },
+            {username: { [Op.like]: user_id } },
             {gender: { [Op.like]: user_id } },],
             
         }    
